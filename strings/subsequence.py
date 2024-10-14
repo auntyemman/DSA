@@ -1,5 +1,5 @@
 # loop through s  and t while the longer of the two is not reached
-def isSubSeq(s, t):
+def is_sub_seq(s, t):
     # initialise counter variables
     i = 0
     j = 0
@@ -23,6 +23,6 @@ def isSubSeq(s, t):
 # time complexity: O(n) 
 # space complexity: O(n) for the seen array
 
-print(isSubSeq("awc", "aecw"))
-print(isSubSeq("aec", "abecw"))
-print(isSubSeq("abc", "ahbgdc"))
+print(is_sub_seq("awc", "aecw"))
+print(is_sub_seq("aec", "abecw"))
+print(is_sub_seq("abc", "ahbgdc"))
