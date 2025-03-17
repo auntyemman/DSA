@@ -1,7 +1,7 @@
 // remove dduplicates from a sorted array
 
 // method 1, stepping back after seeing duplicates
-// Time complexity: O(n)
+// Time complexity: O(n^2)
 // Space complexity: O(1)
 function removeDuplicates(nums) {
 
@@ -12,6 +12,24 @@ function removeDuplicates(nums) {
         }
     }
     return nums.length
+}
+
+// method 2, stepping back after seeing duplicates
+// Time complexity: O(n)
+// Space complexity: O(1)
+
+function removeDuplicates(nums) {
+    let k = 1;
+    for(let i=1; i<nums.length; i++) {
+        // if i is unique from k
+         // Compare current element at i, with the last unique element (at k-1)
+        if (nums[i] !== nums[k-1]) {
+            // make nums to have unique element of k
+            nums[k] = nums[i]
+            k++;
+        }
+    }
+    return k
 }
 
 console.log(removeDuplicates([1,1,2]));
