@@ -37,9 +37,11 @@ function removeDuplicates(nums) {
 // Space complexity: O(n)
 function removeDuplicates(nums) {
     let tracker = {}
+    // build the frequency
     for(let i=0; i<nums.length; i++){
         tracker[nums[i]] = (tracker[nums[i]] || 0) + 1
     }
+    // check the frequency
     for(let i=0; i<nums.length; i++){
         if (nums[i] === nums[i+1]){
             nums.splice(i, tracker[nums[i]] - 1)
