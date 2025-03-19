@@ -1,4 +1,4 @@
-// remove dduplicates from a sorted array
+// remove dduplicates from a sorted array.
 
 // method 1, stepping back after seeing duplicates
 // Time complexity: O(n^2)
