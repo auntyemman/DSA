@@ -7,7 +7,7 @@ function maxAvSubArray(nums, k) {
     }
     maxSum = 0;
     // starting from next iterative to build the rest for the sum
-    for(i=k; i<nums.length-1; i++){
+    for(i=k; i<=nums.length-1; i++){
         // add the next number to the window
         windowSum = windowSum + nums[i];
         // remove the previous number in the window
@@ -18,3 +18,4 @@ function maxAvSubArray(nums, k) {
 }
 
 console.log(maxAvSubArray([1,12,-5,-6,50,3], 4));
+console.log(maxAvSubArray([0,1,1,3,3], 4));
