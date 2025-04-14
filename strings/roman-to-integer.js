@@ -12,7 +12,7 @@ function romanToInteger(s){
     }
     let result = 0;
     let i = 0;
-    while(i < s.length - 1){
+    while(i < s.length){
         let diff = 0;
         if(m[s[i+1]] > m[s[i]]) {
             diff = m[s[i+1]] - m[s[i]];
@@ -28,3 +28,4 @@ function romanToInteger(s){
 }
 
 console.log(romanToInteger('MCMXCIV'));
+console.log(romanToInteger('III'));
