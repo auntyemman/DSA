@@ -5,12 +5,12 @@ function maxAvSubArray(nums, k) {
     for(i=0; i<k; i++){
         windowSum += nums[i];
     }
+    maxSum = 0;
     // starting from next iterative to build the rest for the sum
     for(i=k; i<nums.length-1; i++){
-        let currentSum = 0;
-        currentSum = windowSum + nums[i];
-        currentSum -= nums[i-k];
-        maxSum = Math.max(windowSum, currentSum);
+        windowSum = windowSum + nums[i];
+        windowSum -= nums[i-k];
+        maxSum = Math.max(windowSum, maxSum);
     }
     return maxSum/k;
 }
