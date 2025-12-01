@@ -1,4 +1,4 @@
-class Heap {
+class HeapQ {
   constructor(compareFn) {
     this.data = [];
     this.compare = compareFn; 
@@ -36,7 +36,7 @@ class Heap {
     return removed;
   }
 
-  // ---------- Bubble Up (heapify up) ----------
+  // ---------- Bubble Up (heapify up) i.e swap with parent ----------
   bubbleUp(index) {
     while (index > 0) {
       let parent = this.parentIndex(index);
@@ -59,8 +59,8 @@ class Heap {
       let right = this.rightChildIndex(index);
       let smallestOrLargest = index;
 
-      // For MinHeap: compare(left, current) means left < current  
-      // For MaxHeap: compare(left, current) means left > current  
+      // For MinHeap: compare(left, current) means left < current (current index)  
+      // For MaxHeap: compare(left, current) means left > current  (current index) 
       if (left < size && this.compare(this.data[left], this.data[smallestOrLargest])) {
         smallestOrLargest = left;
       }
@@ -86,7 +86,7 @@ class Heap {
 // compare(a, b) returns true if a < b
 // This is the ONLY difference for MinHeap
 //
-class MinHeap extends Heap {
+class MinHeapQ extends HeapQ {
   constructor() {
     super((a, b) => a < b); // distinguishing logic here
   }
@@ -99,14 +99,14 @@ class MinHeap extends Heap {
 // compare(a, b) returns true if a > b
 // This is the ONLY difference for MaxHeap
 //
-class MaxHeap extends Heap {
+class MaxHeapQ extends HeapQ {
   constructor() {
     super((a, b) => a > b); // distinguishing logic here
   }
 }
 
 // minHeap usage example
-const minH = new MinHeap();
+const minH = new MinHeapQ();
 minH.push(5);
 minH.push(2);
 minH.push(8);
@@ -116,7 +116,7 @@ console.log(minH.pop()); // 1
 console.log(minH.pop()); // 2
 
 // maxHeap usage example
-const maxH = new MaxHeap();
+const maxH = new MaxHeapQ();
 maxH.push(5);
 maxH.push(2);
 maxH.push(8);
