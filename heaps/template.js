@@ -120,7 +120,7 @@ const maxH = new MaxHeapQ();
 maxH.push(5);
 maxH.push(2);
 maxH.push(8);
-maxH.push(1);
+maxH.push(1); 
 
 console.log(maxH.pop()); // 8
 console.log(maxH.pop()); // 5
