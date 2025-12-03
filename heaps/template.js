@@ -86,7 +86,7 @@ class HeapQ {
 // compare(a, b) returns true if a < b
 // This is the ONLY difference for MinHeap
 //
-class MinHeapQ extends HeapQ {
+export class MinHeapQ extends HeapQ {
   constructor() {
     super((a, b) => a < b); // distinguishing logic here
   }
@@ -99,7 +99,7 @@ class MinHeapQ extends HeapQ {
 // compare(a, b) returns true if a > b
 // This is the ONLY difference for MaxHeap
 //
-class MaxHeapQ extends HeapQ {
+export class MaxHeapQ extends HeapQ {
   constructor() {
     super((a, b) => a > b); // distinguishing logic here
   }
