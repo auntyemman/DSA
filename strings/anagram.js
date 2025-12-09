@@ -1,3 +1,29 @@
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram = function(s, t) {
+    if(s.length !== t.length) return false;
+    const sCount = {};
+    const tCount = {};
+    for (const ch of s) {
+        sCount[ch] = (sCount[ch] || 0) + 1;
+    }
+
+    for (const ch of t) {
+        tCount[ch] = (tCount[ch] || 0) + 1;
+    }
+
+    // check if both objects have same keys with same values i.e have the same count or frequency
+    for (const key in sCount){
+        if(sCount[key] !== tCount[key]) return false
+    }
+    return true;
+};
+
+
+
 // check if two strings are anagrams i.e they have same characters but in different order
 function anagrams(s1, s2) {
     // using map
@@ -19,3 +45,4 @@ function anagrams(s1, s2) {
 }
 
 console.log(anagrams('cinema', 'iceman'));
+console.log(isAnagram('cinema', 'iceman'));
